@@ -3,9 +3,10 @@
 #include <iostream>
 
 class QHash{
+    public:
     QHash() = default;
     QHash(const QHash& qhash) = default;
-    std::string QHashBlock(const char* blockinfo);
+    std::string QHashBlock(unsigned char* blockinfo);
     ~QHash();
 };
 #endif

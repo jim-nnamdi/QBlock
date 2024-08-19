@@ -5,7 +5,7 @@
 #include <sstream>
 #include "sha.hh"
 
-std::string QHashBlock(const char* blockInfo) {
+std::string QHashBlock(unsigned char* blockInfo) {
     unsigned char hash[SHA256_DIGEST_LENGTH];
     EVP_MD_CTX* context = EVP_MD_CTX_new();
     if(EVP_DigestInit_ex(context, EVP_sha256(), nullptr) != 1) {
@@ -14,7 +14,7 @@ std::string QHashBlock(const char* blockInfo) {
         std::string exiterror = std::to_string(EXIT_FAILURE);
         return exiterror;
     }
-    if(EVP_DigestUpdate(context, blockInfo, std::strlen(blockInfo)) != 1){
+    if(EVP_DigestUpdate(context, blockInfo, sizeof(blockInfo)) != 1){
         std::cerr << "EVP_DigestUpdate_Error" << std::endl;
         EVP_MD_CTX_free(context);
         std::string exiterror = std::to_string(EXIT_FAILURE);

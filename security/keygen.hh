@@ -4,6 +4,7 @@
 #include <tuple>
 
 class QKeygen{
+    public:
     QKeygen() = default;
     QKeygen(const QKeygen& qkeygen) = default;
     std::tuple<unsigned char*, unsigned char*> QGenKeyPairs();
