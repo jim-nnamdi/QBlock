@@ -4,9 +4,9 @@
 
 class QHash{
     public:
-    QHash() = default;
-    QHash(const QHash& qhash) = default;
+    QHash();
+    QHash(const QHash& qhash);
     std::string QHashBlock(unsigned char* blockinfo);
-    ~QHash();
+    ~QHash(){std::cout << "QHash_Class_Terminated\n\n";};
 };
 #endif

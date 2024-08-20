@@ -5,7 +5,7 @@
 #include <sstream>
 #include "sha.hh"
 
-std::string QHashBlock(unsigned char* blockInfo) {
+std::string QHash::QHashBlock(unsigned char* blockInfo) {
     unsigned char hash[SHA256_DIGEST_LENGTH];
     EVP_MD_CTX* context = EVP_MD_CTX_new();
     if(EVP_DigestInit_ex(context, EVP_sha256(), nullptr) != 1) {
@@ -30,4 +30,8 @@ std::string QHashBlock(unsigned char* blockInfo) {
     for(int i = 0; i < SHA256_DIGEST_LENGTH; ++i) 
         ss << std::hex << std::setfill('0') << static_cast<int>(hash[i]);
     return ss.str();
+}
+
+QHash::QHash()
+{
 }

@@ -9,8 +9,12 @@ add_executable(pharisee
               src/main.cc
               security/sha.hh
               security/sha.cc
+              security/keygen.hh 
+              security/keygen.cc
               block/blocks.hh 
               block/blocks.cc
+              blockchain/chain.hh 
+              blockchain/chain.cc
 )
               
 target_include_directories(pharisee PRIVATE ${OPENSSL_INCLUDE_DIR})

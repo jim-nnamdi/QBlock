@@ -1,3 +1,5 @@
+#ifndef QQBLOCK_H
+#define QQBLOCK_H
 #include <iostream>
 #include <cstdint>
 #include <stdbool.h>
@@ -12,11 +14,13 @@ struct QQBlock{
 };
 
 class QBlock {
-    QBlock() = default;
-    QBlock(const QBlock& qblock) = delete;
+    public:
+    QBlock();
+    QBlock(const QBlock& qblock);
     // creating a block requires only the public key of the user
     // and also requires a transaction amount based on the block
     QQBlock* QcreateBlock(unsigned char* Qacc, uint64_t QtxAmount);
     static void QPrintBlockData(QQBlock* qblock);
     ~QBlock();
 };
+#endif

@@ -11,6 +11,6 @@ std::vector<std::unique_ptr<QQBlock > >& QBlockchain::QAddBlock(std::unique_ptr<
 
 void QBlockchain::LogBlock(const QBlockchain &chain)
 {
-    for(int B =0 ; B < chain.blocks.size(); ++B)
-        std::cout << chain.blocks[B] << std::endl;
+    for(int i = 0; i < chain.blocks.size(); ++i) 
+        std::cout << chain.blocks[i] << std::endl;
 }
